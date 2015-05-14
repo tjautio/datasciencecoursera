@@ -16,5 +16,17 @@ When you have a new file at your own computer and want it to be under version co
 When you have changed your file and want to commit it:
 	git commit -m "message"
 	
-When you want to upload your files on the Github
+When you want to upload your files on the Github:
 	git push
+	
+Then you have different branches if there are several users. Creates new branch:
+	git checkout -b branchname
+	
+Check in which branch you are:
+	git branch
+	
+Get back to the master branch:
+	git checkout master
+	
+Tassa olisi nyt tama alkuun
+	
