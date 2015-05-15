@@ -1,7 +1,7 @@
 ## Notes
 ### Types of questions:
 * Descriptive analysis
-Describe what data looks like using e.g. graphs, charts etc. Aim is not to do any conclusions
+** Describe what data looks like using e.g. graphs, charts etc. Aim is not to do any conclusions
 * Exploratory analysis
 You can find new correlations. There is connections but the real causal link is not checked in any detail yet.
 * Inferential analysis
