@@ -23,21 +23,7 @@
 * Prediction usually requires enough difference in the population distributions to distinguish from which distribution the observation came from
 
 
-## Notes on R
-### commands
-* getwd() gives working directory
-* read.csv("write here the path") reads csv file
-* rnorm('how many rnd var we produce') - normal random variable
-* function(){
-			'the function itself here'
-			}
-* length() takes the length of a list or vector?
-* source() imports functions you have in file.R
-* vector(class, length) creastes on empty vector of particular class and lenght
-* c(), concatenate a vector of values you give
-* class() gives you the class of the object
-* matrix('what is filling the matrix', nrow =, ncol = ) creates a matrix
-			
+## Notes on R	
 ### History of R
 * R is a dialect of S language. 
 * Fourth version of S released in 1998, basically what we use as a basis of R today
