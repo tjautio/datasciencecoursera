@@ -1,4 +1,7 @@
 Commands:
+Checking the working directory
+	pwd
+
 When you have a local repository use:
 	git init
 	

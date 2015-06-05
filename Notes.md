@@ -373,3 +373,179 @@ NAs introduced by coercion
 saeg      5     7
 asf       6     8
 
+## Datasets
+### Smallish datasets
+* just use read.table or read.csv
+### Larger datasets
+* maybe good idea to use all the (read help page for read.table)
+* if no comments set the comment.char = ""
+* colClasses are important. If dataset is large then it's much faster if you define it
+* it's important how much RAM you have, OS and is it OS32 or 64?
+* e.g. 1500000rows X 120 columns X 8 bytes/numerics means about 1.34 GB of memory requirement and you need more
+### Text format
+* more metadata in the your dataset
+* dump() or dput()
+* take a lot of space
+
+> dput(y)
+structure(list(a = 1, b = structure(1L, .Label = "a", class = "factor"), 
+    c = TRUE), .Names = c("a", "b", "c"), row.names = c(NA, -1L
+), class = "data.frame")
+> dput(y,file ="y.R")
+> new.y <- dget("y.R")
+> new.y
+  a b    c
+1 1 a TRUE
+
+### Opening a connnection
+* can be powerful if you don't want to get whole thing or you want to get a data from a webpage
+con <-url("http://www.iltalehti.fi","r")
+> x <-readLines(con, 10)
+> x
+ [1] "<!doctype html>"                                                                                                                                                                            
+ [2] ""                                                                                                                                                                                           
+ [3] "<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"fi\">"                                                                                                                      
+ [4] "<head>"                                                                                                                                                                                     
+ [5] "<title>Iltalehti.fi | IL - Suomen suurin uutispalvelu</title>"                                                                                                                              
+ [6] "<link href=\"http://www.iltalehti.fi/rss/rss.xml\" rel=\"alternate\" type=\"application/rss+xml\" title=\"Iltalehti.fi tuoreimmat uutiset\" />"                                             
+ [7] "<meta name=\"description\" content=\"Uutiset, urheilu, viihde, talous, sää, elämäntapa, terveys, perhe, ruoka - Iltalehti.fi, kaikki tuoreet uutiset yhdestä osoitteesta kellon ympäri\" />"
+ [8] "<meta name=\"title\" content=\"Iltalehti.fi | IL - Suomen suurin uutispalvelu\" />"                                                                                                         
+ [9] "<meta name=\"keywords\" content=\"Uutiset, urheilu, viihde, talous, sää, elämäntapa, terveys, perhe, ruoka\" />"                                                                            
+[10] "<meta property=\"og:title\" content=\"Iltalehti.fi | IL - Suomen suurin uutispalvelu\" />"     
+
+## Subsetting
+* [] you get the object of same class as you're subsetting  
+* [[]], can only be used with list of data.frame
+* $ is used to extract elements of a list or dataframe by name
+> x <- c(1:5)
+> x
+[1] 1 2 3 4 5
+> x[1]
+[1] 1
+> x[2:4]
+[1] 2 3 4
+> x[x<3]
+[1] 1 2
+> u <- x > 3
+> x[u]
+[1] 4 5
+
+> x <- list(foo=1:3, bar = "bo")
+> x
+$foo
+[1] 1 2 3
+
+$bar
+[1] "bo"
+
+> x$bar
+[1] "bo"
+> x$foo
+[1] 1 2 3
+
+
+> x <- list(foo= list(1:3), bar = c("bo", "ba"))
+> x
+$foo
+$foo[[1]]
+[1] 1 2 3
+
+
+$bar
+[1] "bo" "ba"
+
+> x[c(1,3)]
+$foo
+$foo[[1]]
+[1] 1 2 3
+
+
+$<NA>
+NULL
+
+> x[[c(1,3)]
++ ]
+Error in x[[c(1, 3)]] : subscript out of bounds
+> x[[c(1,3)]]
+Error in x[[c(1, 3)]] : subscript out of bounds
+> x[[c(1,2)]]
+Error in x[[c(1, 2)]] : subscript out of bounds
+> x
+$foo
+$foo[[1]]
+[1] 1 2 3
+
+
+$bar
+[1] "bo" "ba"
+
+> x$bar
+[1] "bo" "ba"
+> x[[c(2,1)]]
+[1] "bo"
+> x[[c(1,1)]]
+[1] 1 2 3
+> x[[1][2]]
+Error: unexpected '[' in "x[[1]["
+> x$foo
+[[1]]
+[1] 1 2 3
+
+> x$foo[1]
+[[1]]
+[1] 1 2 3
+
+> x$foo[2]
+[[1]]
+NULL
+
+> x$foo[[1]]
+[1] 1 2 3
+> x$foo[[1]][1]
+[1] 1
+> x$foo[[1]][2]
+[1] 2
+> x$foo[[1]][3]
+[1] 3
+
+>  x<-matrix(1:6,2,3)
+> x[1,2]
+[1] 3
+> x
+     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+> x[1,3]
+[1] 5
+> x[1]
+[1] 1
+> x[1,]
+[1] 1 3 5
+
+* drop = FALSe in subsetting for matrices and you maintain the class of the object. Otherwise you get not a matrix but a single number or a vector
+
+* There is partial matching system in R.. With $ it works automatically, and with [["", exact = FALSE]] you get the same result
+
+Removing NA value
+
+> x <- c(1,2, NA, 4, 5)
+> bad <- is.na(x)
+> x[!bad]
+[1] 1 2 4 5
+
+### Vectoriced operations that can be than without looping
+> x <- 1:4; y <- 6:9
+> x+y
+[1]  7  9 11 13
+> y==8
+[1] FALSE FALSE  TRUE FALSE
+> x*y
+[1]  6 14 24 36
+> x/y
+[1] 0.16
+
+* with matrices x * y  is element-wise operation and %*% is matrix multiplication
+
+
+
+

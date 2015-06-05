@@ -1,7 +1,6 @@
 ## R commands
 ### R intro
 * getwd() gives working directory
-* read.csv("write here the path") reads csv file
 * rnorm('how many rnd var we produce') - normal random variable
 * function(){
 			'the function itself here'
@@ -32,3 +31,38 @@
      segarb etabd
 saeg      5     7
 asf       6     8
+* is.na(), is.nan()
+
+
+### Reading data
+* read.table(), read.csv("write here the path") for reading tabular data
+* readLines() reads lines of text file
+* source() reads R code
+* dget() also reading R code files
+* load(), for loading saved workspace
+* unserialize(), read R object in binary form
+* writing analougues are:
+* write.table(), writeLines(), dump(), dput(), save(), serialize()
+#### read.table() arguments
+* file, file-name
+* header, logical, if the file has header lines
+* sep, string, how the columns are separated
+* colClasses, character, Class of each column in the dataset
+* nrow, number of rows in dataset
+* comment.char, string indicating comment character
+* skip, the number of lines to skip from the beginning
+* stringsAsFactor, if character variables as coded as factors
+* read.csv - otherwise the same but default separator is comma, and header is always true
+* rm() removes an object(s)
+* file(), opens file
+* gzile(), open a connection to compression gzip algorithm
+* bzfile(), open a connection to compression gbz2ip algorithm
+* url(), opens a connection to a webpage
+* complete.cases() tells you which rows have good many missing values and you want to get rid of them
+* which() Give the TRUE indices of a logical object, allowing for array indices. e.g data1[which(data1$Ozone >31),]
+
+
+
+
+
+
