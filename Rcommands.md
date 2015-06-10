@@ -12,6 +12,12 @@
 * rnorm() gives you a draw from normal distribution
 * rbinom() gives you a draw from binomal distribution
 * length() takes the length of a list or vector?
+* is.na(), is.nan()
+* na.rm = logical
+* ls() lists something?
+* environment()
+* strptime() turns character vector to time object
+
 
 ### Data types lectures
 * vector(class, length) creastes on empty vector of particular class and lenght
@@ -134,9 +140,11 @@ for(i in 1:10) {
 * infinite loop that is stopped only by break command
 
 
+## Functions:
 
-
-
+x <- function(args){
+		%the action
+}
 
 
 

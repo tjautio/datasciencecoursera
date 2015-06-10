@@ -655,5 +655,39 @@ rbinom(1,1,0.5)
 * break, stops any loop
 * next skips one round of iteration can be used for example with if-statement
 
+## Functions
+* functions are R objects
+* can be passed as arguments to other functions
+* can be nested
+* arguments can have default values. Especially useful when defining a larger function you want to use often and tweak
+* arguments can be matched positionally or by name
+* e.g. sd(mydata) == sd(x = mydata)
+* arguments can be also partially matched as long as it's unique
+* lazy evaluation, useless arguments don't produce errors if they're not needed
+* ... can be used e.g. when tweaking another function and you don't want to re-write the whole argument list but you want it to available
+* after ..., you can't use positional or partial matching
+
+## Scoping
+* how value is bound to a free variable
+* e.g. f <- function(x,y) {
+			x^2 + y / z
+}
+* Scoping is the set of rules that defines what is z (the free variable)
+* in R: the values of free variables are searched for in the environment in which the function was defined
+
+## Optimization
+* optim() - more than one, nlm(), optimize() - one variable, require you to pass a function as argument
+
+## Coding standards in R
+* Use text editors
+* Indent your code
+* Limit the width
+* Limit the length of functions (easier to read and makes your functions easier to debug)
+
+## Dates and Times in R
+* x <- as.Date("1970-01-01")
+* dates are saved objects of date class
+* keep track of the leap years, seconds, daylight savings, time zones, etc.
+* helps with the plots
 
 
