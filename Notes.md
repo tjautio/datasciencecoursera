@@ -690,4 +690,19 @@ rbinom(1,1,0.5)
 * keep track of the leap years, seconds, daylight savings, time zones, etc.
 * helps with the plots
 
+## Debugging
+* Something is wrong if you get
+* message (mild, might be ok)
+* warning(something unexpected happened)
+* error (fatal problem)
+* condition, all previous are conditions (indicates that something unexpected can happen)
+* you can print() to add comments in your code
 
+### When you get an error:
+* Ask the questions:
+* What are the input
+* What did you expected
+* What did you get
+* What's the difference
+* Did you expect the right thing
+* Can you reproduce the problem (exactly)

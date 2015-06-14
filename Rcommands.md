@@ -17,6 +17,9 @@
 * ls() lists something?
 * environment()
 * strptime() turns character vector to time object
+* which() Takes logical vector and tells which elements are TRUE
+* any(), all(), takes logical vector and returns true if any or all are TRUE
+* gl(n,k,length) gives list with n different levels, all including k elements unless lenght is defined and it cuts the length
 
 
 ### Data types lectures
@@ -145,6 +148,24 @@ for(i in 1:10) {
 x <- function(args){
 		%the action
 }
+
+### Specific loop functions
+* lapply(x,function, ...) Loop over a list and evaluate a function on each elements
+* sapply() Try to simplify result of lapply()
+* apply(x, margin, function, ...) Apply a function over the margins of an array
+* tapply(x, index, function) apply a function over subset of a vector
+* mapply(function, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAME = TRUE) multivariate lapply()
+* split(x(vector, list, dataframe, function, )) applies a function and provides a summary statistics. Produces a list. Easy to use lapply to with split
+* rowMeans(), colMeans(), rowSums(), colSums(), highly optimised functions for this purpose
+
+
+### Depungging functions:
+* traceback() print function call stack. Have to use right a way after error occurs
+* debug() flags a function for debug mode. You can go thourght the funtion line by line.
+* browser() suspends the execution
+* trace() insert debugging code into a function without editing the code
+* recover() Execution of a function stops when an error happens
+
 
 
 

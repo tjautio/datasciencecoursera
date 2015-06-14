@@ -16,6 +16,11 @@ add2 <- function(x,y){
 above10 <- function(x){
     use <- x > 10
     x[use]
+    
+
+x <- 1:10
+for (i in length(x)){
+    a <- paste("C://susi", i, ".csv", sep="")
 }
 
 above <- function(x, n = 10){
@@ -33,3 +38,21 @@ columnmean <- function(x){
     means
 }
 
+start <- Sys.time()
+a <- rowMeans(x)
+stops <- Sys.time()
+stops - start
+
+start <- Sys.time()
+a <- apply(x, 1, mean)
+stops <- Sys.time()
+stops - start
+
+
+m <- function(x) {
+    if( x > 0)
+        print("x")
+    else
+        print("soirgnoern")
+    invisible(x)
+}
