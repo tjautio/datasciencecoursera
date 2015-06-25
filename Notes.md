@@ -666,6 +666,8 @@ rbinom(1,1,0.5)
 * lazy evaluation, useless arguments don't produce errors if they're not needed
 * ... can be used e.g. when tweaking another function and you don't want to re-write the whole argument list but you want it to available
 * after ..., you can't use positional or partial matching
+* You can use functions also without {}
+
 
 ## Scoping
 * how value is bound to a free variable
@@ -706,3 +708,15 @@ rbinom(1,1,0.5)
 * What's the difference
 * Did you expect the right thing
 * Can you reproduce the problem (exactly)
+
+## Profiler
+* Helps you to find why your program takes as long as it takes
+* Not the first thing
+* When it works first then you can optimize it
+* you can use system.time() to evaluate how long it took run your code
+* user/elapsed time
+* you can use Rprof() and summarize summaryRprof()
+* Rprof and system.time() DO NOT work together
+* keeps track of the call stack
+* normalize by.self and by.total
+* C or Fortran code doesn't work on profiler

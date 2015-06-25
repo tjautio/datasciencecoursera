@@ -13,6 +13,7 @@
 * rbinom() gives you a draw from binomal distribution
 * length() takes the length of a list or vector?
 * is.na(), is.nan()
+* is.null()
 * na.rm = logical
 * ls() lists something?
 * environment()
@@ -20,7 +21,15 @@
 * which() Takes logical vector and tells which elements are TRUE
 * any(), all(), takes logical vector and returns true if any or all are TRUE
 * gl(n,k,length) gives list with n different levels, all including k elements unless lenght is defined and it cuts the length
-
+* <<- assign value to an object in an different environment that the current one
+* as."add what you want" creates an object of a particular class
+* class() returns the class of the object
+* unclass() returns the value how R stores the object
+* str() summarises an object
+* summary()
+* head()
+* tail()
+* split(dataset, dataset$"label of the variable")
 
 ### Data types lectures
 * vector(class, length) creastes on empty vector of particular class and lenght
@@ -166,8 +175,22 @@ x <- function(args){
 * trace() insert debugging code into a function without editing the code
 * recover() Execution of a function stops when an error happens
 
+### str():
+* compactly  displays the contents of an object
+* summary() is another useful function
 
+### Simulation
+* rnorm() normal random variable
+* dnorm() density
+* prnom() cumulative distribution
+* qnorm() quantile function
+* rpois() rng with poisson
+* set.seed() set the seed so you get some set of numbers
 
+* what if you want to produce random numbers from a linear model
+* e.g. y <- 0.5 + 2*x + e. create set of random numbers x and e and then you can calculate y
+
+* sample() get a random sample from a a given set
 
 
 
