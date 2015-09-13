@@ -720,3 +720,92 @@ rbinom(1,1,0.5)
 * keeps track of the call stack
 * normalize by.self and by.total
 * C or Fortran code doesn't work on profiler
+
+
+## Getting and cleaning the data
+* Data usually is in quirky format, Being able to re-organise is effiently is very valuable
+* Raw data -> processing script -> data analysis -> data communication
+* This course is about the processing step
+
+### Definition of data
+* value variables belonging to a set of items
+* Raw data, hard to analyse, usually needs to analysed only once
+* Processed data, data is ready for analysis, ALL STATES SHOULD BE RECORDED
+* What is raw and processed data is kind of dependent on person and the instant
+
+### Tidy data
+* You should have: raw data set, tidy data set, code book, explanation how you got from raw to tidy data set
+* set is raw if : you ran no software, didn't manipulate it, didn't remove anything and didn't summarized it any way
+* target is: each variable should be in one column, each observation of a variable should be in different row, one table for each kind of variables, if multiple tables they should be linked by a column
+* tips: row at the top for names, human readable names, one file per table
+
+### Code book
+* information about variables including units
+* info about the summary choices
+* information where the data came from
+* common format word/text file
+* study design how the data was collected
+
+### Instruction list
+* Ideally computer script (R, Python etc.)
+* Input is the raw data
+
+### Downloading a file from internet
+* file.exists("directoy name") check if the directory exists
+* dir.create("directory name") create a directory if it doesn't exists
+* download.file() imports file from web
+* url is the address, destfile is the destination, method depends on the file
+* method might be different depending if the website is secured or not
+* Remeber to record the time of download
+
+### Reading local flat files
+* read.table() is most robust but might be a bit slow
+* read.csv(), read.csv2(), sep = "," and header = TRUE
+* quote ="" means no quote
+* skip how many lines to skip before starting
+
+* XL Conncect
+* XL Conncect vignette
+
+### XML
+* Markup language
+* Used to store stucture data, widely used for web applications
+* Tags start <section>, end </section>, empty tags <line-break />
+
+* Elements <Greeting> Hello World </Greeting>
+
+* Attributes <img src ="pic.jpg" alt="picture"/>
+* <step number ="3"> connect A to B </step>
+
+* loading XML package
+* xmlTreeParse(), xmlRoot(), xmlName()
+* Can be used to extract efficiently extratc information from websites
+
+### JSON
+* Javascropt Object Notation
+* Lightweight data storage
+* Common format for data drom API's
+* toJSON(), fromJSON()
+
+### data.table()
+* Fast in subsetting, grouping and updating
+* data.table(x =norm(9), y =rep(c("a", "b", "c", "d", each = 3), z= norm(9)))
+* Works kind of like data frame. Subsetting a bit different
+* It doesn't do a copy of data tables, more memory efficient
+* DT[, what you want to do and add that to the table]
+* DT[,.N, by = name]
+* setkey(DT,x)
+* merge
+* melt() and dcast() for data.table 
+
+
+* Output is the tidy data
+* No parameters to the script
+* If it needs paramters you should give the information
+
+### Downloading files
+* You want to download data with R 
+
+
+
+* 

@@ -129,7 +129,7 @@ asf       6     8
 ### For loop:
 for(i in 1:10) {
 		print(i)
-
+}
 
 ### While loop
 > count <- 0
@@ -191,6 +191,23 @@ x <- function(args){
 * e.g. y <- 0.5 + 2*x + e. create set of random numbers x and e and then you can calculate y
 
 * sample() get a random sample from a a given set
+
+## Getting data
+* getwd() tells you your current working directory
+* setwd("C:\\Users\\Adrew\\downloads") set your working directory
+* setwd("..\\") Move on directory up
+* setwd(".\\data")
+
+* file.exists("directoy name") check if the directory exists
+* dir.create("directory name") create a directory if it doesn't exists
+* download.file() imports file from web
+* url is the address, destfile is the destination, method depends on the file
+
+* read.table(file, header, sep, row.names, nrows) reads the file and stores it into RAM
+* read.xlsx(), read.xlsx2() sheetIndex, header
+* write.xlsx() you can also write excel files
+* xlsx package
+* data.table() faster than data.frame(), written in C
 
 
 
