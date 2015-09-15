@@ -209,6 +209,18 @@ x <- function(args){
 * xlsx package
 * data.table() faster than data.frame(), written in C
 
+* dbConnect(), mySQL
+* dbGetQuery(), you pass mySQL commands inside the function
+* dbDisconnect(), remember to disconnect right after you have got the data
+* dbListFields()
+* dbReadTable()
+* dbSendQuery(), probably databases are too large to read in R as whole so you want only get a part of it
+* dbClearResult() clear the query from the server
+
+* h5createFile()
+* h5createGroup()
+* h5read()
+* h5write()
 
 
 

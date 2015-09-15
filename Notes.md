@@ -806,6 +806,15 @@ rbinom(1,1,0.5)
 ### Downloading files
 * You want to download data with R 
 
+### mySQL
+* Databases organised as tables
+* commmon in web app's
+* tables are linked so that all this can be organised pretty easily
+* Mysql must be installed and that could be a bit complicated
+* http://www.ahschulz.de/2013/07/23/installing-rmysql-under-windows/
+* dbConnect(), dbGetQuery(), dbDisconnect(); connection system for databases
 
-
-* 
+### HDF5
+* Used to store large datasets
+* h5createFile()
+* can be used to optimise reading/writing from disc in R
