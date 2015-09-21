@@ -222,6 +222,81 @@ x <- function(args){
 * h5read()
 * h5write()
 
+* httr-package: GET()
+
+## Manipulating data
+* which(), excludes NA's 
+* sort(), default = increasing
+* df[order(df$var1),] orders the dataframe based on the one variable
+* plyr package: arrange(df, var1) desc()
+* df$var <- rnorm(5) adding variables, df <- cbind(df, rnorm(5)), also rnorm()
+ 
+ ### Summarizing
+ * head(,n= 3), tail()
+ * summary()
+ * str()
+ * quantile(, probs = c(0.5, 0.75, 0.9))
+ * table(data$variable, useNA = "ifany")
+ * sum(), any(), all()
+ * colSums(), rowSums()
+ * as.data.frame()
+ * xtabs(), creates cross tabs, see notes
+ * ftable() combines smaller tables to one bigger one
+ * object.size() in bytes, print(object.size(data), units = "Mb") print the size of the object
+ * seq()
+ * ifelse(logical, what to print)
+ * cut(data, breaks=quantile()), or easier with Hmisc package, cut2(,g = 4) amount of groups
+ * factor(); to turn something in factor variables
+ * sample(); creates a sample
+ * as.numeric(); turn strings e.g. in numeric
+ * plyr -package mutate()
+ * some transformations: abs, sqrt, ceiling, floor, round, signif, cos, sin, log, log2, log10, exp
+ 
+ ### Reshaping data
+ * reshape2 -package
+ * melt(); tell which variables are id and which are measure
+ * dcast(data, var1(rows) ~ variable(columns)); shapes it again to particular shapes
+ * dcast(data, var1 ~ var2,mean) gives now mean
+ * tapply(data$var1, data$var2, sum) table apply
+ * split(data$var1, data$var2)
+ * lapply() list apply
+ * unlist()
+ * sapply() simple apply
+ * acast() array
+ * match()
+ 
+ ### plyr - same thing but with one command
+ * assumed to be used for clean tidy data
+ * ddply(, data, .(var1), summarize, sum sum(var2))
+ * works also for data.table -package
+ * select(data, vars) subset of columns
+ * filter(data, logical) subset of rows based on logical cndt
+ * arrange(data, vars or desc(vars)) reorder rows
+ * rename(data, newname = oldname) rename variables
+ * mutate(data, var1detrend = var1 - mean(var1)) add new vars or columns or transforms existing ones
+ * summarise(data, var1 = mean(var1),...) summary statistics
+ * group_by(data,); create for example a dummy for classes and then use that to groups the observations
+ * first argument is always the dataset
+ * no need to use $, just referring by the name, -(var1:var2) shows all the rest
+ * returns always data frame
+ * %>% pipeline of operator, no need to define intermediate variables
+ 
+ ### Merging data
+ * merge(data1, data2, by.data1="var21", by.data2="var1")
+ * if you don't define the by's then it tries to do it with the common names 
+ * plyr: join() even more than one df's by join_all(list)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
 
 
 

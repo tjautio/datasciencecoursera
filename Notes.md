@@ -818,3 +818,45 @@ rbinom(1,1,0.5)
 * Used to store large datasets
 * h5createFile()
 * can be used to optimise reading/writing from disc in R
+
+### Reading data from Web
+* extracting data from HTML
+* webscraping
+* url() open connection, readLines() reads lines from the page, remember to close the connection
+* htmlTreeParse(), htmlParse
+* httr -package: GET()
+* Pages with passwords: inside the GET()-function you can use authenticate() to log in
+* handle()-function
+
+### Getting data from API's
+* developer account usually is needed to access the data
+* accessing Twitter, oauth_app(), , sign_oauth1.0() and then GET()
+* httr-package works well with FB, Google, Twitter, Github
+
+### Other sources:
+* There are more packages 
+* gzfile(), bzfile() for zipped files
+* foreign package for other languages
+* You can also read jpeg, bitmap, png files and GIS data, music etc.
+
+
+## Manipulating data
+### Subsetting
+* data.frame[,1], data.frame[,"var1"], data.frame[1:2,"var2"]
+* first column of the dataframe, same, and first two rows and second column respectively
+* using logical elemenents data.frame[(df$var1 <= & df$var3 >11),]
+* & and, | or
+* df[which(df$var > 8),] the which() command excludes NA's
+* sort()
+
+### Summarizing
+* table(data$var %in% c("string")); checks if in var there is any that corresponds to the string
+* df[data$var %in% c("string"),] can be used to subset
+* xtabs(var3 ~ var1 + var2, data = df), breakdown
+* e.g. of using . xtabs(breaks ~ ., data df), breakdown with all the other variables
+* ftable() summarises the several smaller ones
+
+### Creating new variables
+* creating sequences seq(min, max, by = 2/ length = 3)
+* x <- c(1,3,6,25,100); seq(along = x)
+* %in% 
