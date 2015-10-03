@@ -286,6 +286,37 @@ x <- function(args){
  * if you don't define the by's then it tries to do it with the common names 
  * plyr: join() even more than one df's by join_all(list)
  
+ ### Text data
+ * tolower() to lower cases
+ * topupper() to upper cases
+ * sub(), gsub(), subsituting chraracters with something else, sub only 1. on the word, gsub all in words
+ * grep(), grepl(), returns where the particular character string appears
+ * strsplit() Splits variables to new ones based on words
+ * steingr-package: nchar() number of characters, paste0(), str_trim
+ 
+ ### Regular Expressions
+ * Metacharacters: ^ beginning of the line, $ end of the line, 
+ * ^[Tt] either upper or lower case, 
+ * ^[0-9] any number
+ * [^?]$ Meaning that does not end with ?
+ * 9.11 here . means that it can be any character
+ * | or
+ * []? the ? after the expression means it is optional
+ * \ means that the sign following \ not the usual
+ * * means that repeat any number of times
+ * {1,5} Interval, this is anything between 1 to 5 
+ * m,n at least m not more than n; m exactly, m, at least m
+ * + space
+ * \1 repetition
+ * handy when you need to work with text
+ 
+ ### Dates
+ * date() gives date
+ * Sys.Date() diffenrent. It is as date 
+ * weekdays(), months(), julian
+ * package lubridate: ymd(), mdy(), dmy(), ymd_hms(..., tz = timezone) etc.
+ * Sys.timezone(), wday(), weekday
+ 
  
  
  
