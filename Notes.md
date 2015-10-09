@@ -860,3 +860,28 @@ rbinom(1,1,0.5)
 * creating sequences seq(min, max, by = 2/ length = 3)
 * x <- c(1,3,6,25,100); seq(along = x)
 * %in% 
+
+## Exploratory data analysis
+* mainly plotting that is
+
+### Basic ideas of how to draw analytic graphics
+* Show comparison, ask compared to what, show control e.g.
+* Show causality, mechanism you believe there is 
+* Show multivariate data, try to show as much as possible
+* Integrate the evidence, tables, plots etc.
+* Describe and document the evidence with good labels, scales etc.
+* Content is king, the story is the most interesting. You need first to have something interesting
+
+### Why do we use graphs
+* to understand data
+* find patterns
+* find modelling strategies
+* debug analyses
+* communicate results
+* mainly done for yourself
+ 
+
+
+
+
+

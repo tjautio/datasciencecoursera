@@ -265,7 +265,7 @@ x <- function(args){
  * acast() array
  * match()
  
- ### plyr - same thing but with one command
+ ### dplyr - same thing but with one command
  * assumed to be used for clean tidy data
  * ddply(, data, .(var1), summarize, sum sum(var2))
  * works also for data.table -package
@@ -302,7 +302,7 @@ x <- function(args){
  * 9.11 here . means that it can be any character
  * | or
  * []? the ? after the expression means it is optional
- * \ means that the sign following \ not the usual
+ * \\ means that the sign following \\ not the usual
  * * means that repeat any number of times
  * {1,5} Interval, this is anything between 1 to 5 
  * m,n at least m not more than n; m exactly, m, at least m
@@ -318,6 +318,14 @@ x <- function(args){
  * Sys.timezone(), wday(), weekday
  
  
+ ## Exploratory data analysis
+ * Mainly about plotting
+ 
+ ### Base plot-functions
+ * boxplot(), abline(), adds horisontal line
+ * hist(), histogramm; rug() plots the points under the histogrma
+ * barplot()
+ * plot(), with(), par()
  
  
  
