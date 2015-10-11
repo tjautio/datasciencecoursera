@@ -30,6 +30,7 @@
 * head()
 * tail()
 * split(dataset, dataset$"label of the variable")
+* gl()
 
 ### Data types lectures
 * vector(class, length) creastes on empty vector of particular class and lenght
@@ -318,18 +319,57 @@ x <- function(args){
  * Sys.timezone(), wday(), weekday
  
  
- ## Exploratory data analysis
- * Mainly about plotting
+## Exploratory data analysis
+* Mainly about plotting
  
- ### Base plot-functions
- * boxplot(), abline(), adds horisontal line
- * hist(), histogramm; rug() plots the points under the histogrma
- * barplot()
- * plot(), with(), par()
+### Base plot-functions
+* boxplot(), abline(), adds horisontal line
+* hist(), histogramm; rug() plots the points under the histogrma
+* barplot()
+* plot(type - "n"[doesn't add the data yet])
+* lines(), adds lines
+* points( ), adds points
+* text(), adds text labes in the plot
+* title(), adds titles
+* legend(), adds legend
+* abline(), adds line you have drawn
+* mtext()
+* with(),
+* par() sets global graphics parameters
+* pairs(), scatterplot matrix
+
  
+### the lattice plots
+* xyplot(, layout = c(4,1)) scatterplot
+* xyplot(){panel.xyplot() panel.abline()...}
+* bwplot() boxplots
+* levelplot(), countourplot()
+* histogramm()
+* stripplot(), boxplot with actual points
+* dotplot(), violin strings
+* splom() scatterplot matrix
+* can save the plots as objects
  
- 
- 
+### the ggplot2 plots
+* qplot()
+  
+### Creating plot file
+* Vector formats, nice in scaling
+* pdf()
+* svg()
+* win.metafile(), only for windows
+* postscript(), not usually available for Windows
+* bitmaps, good for lot's points and efficient in memory-vise, not good for re-sizing
+* png(), good for lines with solid colors
+* jpeg(), good for photos, not good for lines
+* tiff()
+* bmp()
+* dev.off(), closes the graphics device, very important
+* when dev.off() is called after that you can see the file
+* dev.cur() currently active graphics device
+* dev.set(), sets to the graphic device you want to use
+* dev.copy(), copies from one to other graphics device
+* dev.copy2pdf(), remember to check, ther might be little differences
  
  
 
