@@ -9,7 +9,43 @@ These are just my personal to collect my thoughts in one place
 ### Some commands
 * CREATE TABLE
 * INSERT INTO
-* SELECT \* FROM <>
+* SELECT * FROM <>
+* SELECT var1, var2, var4 FROM table;
+* SELECT DISTINCT var1 FROM table;
+* WHERE var1 > 8; (e.g)
+* WHERE name LIKE "se_en"; _ here means any character
+* % in previous kind of statements means:
+* A% begins with A, %a ends with a, %a% contains a. Note: not case sensitive
+* WHERE year BETWEEN 1990 AND 2000 AND genre = 'comedy';
+* ORDER BY imdb_rating DESC (/ ASC)
+* LIMIT <number> : limits the number of rows
 * UPDATE
 * ALTER TABLE
 * DELETE FROM
+* SELECT COUNT(*) FROM table1; counts the observations
+* GROUP BY variables; groups observations by variable
+* SELECT SUM(variable) FROM table; Also MIN(), MAX(), AVG(), ROUND()
+* SELECT MAX(variable) FROM table
+* SELECT name, category, MAX(downloads)
+FROM fake_apps
+GROUP BY category; this gives us the maxs of the all categories
+
+### Multiple tables combined
+* CREATE TABLE artists(id INTEGER PRIMARY KEY, name TEXT); here the PRIMARY KEY is the new that links the tables
+* There can be only one PRIMARY KEY column. All values are unique and none are NULL
+* SELECT albums.name, albums.year, artists.name FROM albums, artists; selecting stuff from multiple tables simultaneously
+* SELECT * FROM albums
+JOIN artists 
+ON albums.artist_id = artists.id; Well does what you could imagine it to does
+* JOIN combines the tables only if the condition is met
+* LEFT JOIN combines the tables and leaves NULL's if the conditions are not met
+* SELECT
+albums.name AS 'Album'; here the column name is changed
+
+
+
+
+
+
+
+
