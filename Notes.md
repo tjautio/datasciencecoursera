@@ -880,6 +880,47 @@ rbinom(1,1,0.5)
 * communicate results
 * mainly done for yourself
  
+ 
+## Three plotting systems of R
+
+### Base
+* base, start with plot and then add stuff
+* drawback is that you can't take thing a way
+* 2-D
+* basic parameters: 
+* pch: plotting symbol
+* lty: line type
+* lwd: line width
+* col: color of plots
+* xlab and ylab: labels for the axes
+* las: orientation of the axis labels
+* bg: background color
+* mar: margin size
+* oma: outher margin size
+* mfrow: number of plots per row
+* mfcol: number of plots per column
+
+### Lattice
+* the lattice system, creates the whole plot at once
+* needs you to specify a lot of things at first
+* conditioning types of plots
+* cannot add pieces when it's done
+* good with panels
+* good when plotting many plots simultaneously
+
+### ggplot2
+* mixes ideas from the two
+* you can add things but it also does more automatically
+* lots of defaults but you can also change them
+
+### Graphics Devices
+* screen device, pdf, png or jpeg etc.
+* ?Devices
+* Also some on CRAN
+* default is screen device, only one
+
+
+
 
 
 

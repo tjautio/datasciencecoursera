@@ -351,8 +351,34 @@ x <- function(args){
 * can save the plots as objects
  
 ### the ggplot2 plots
-* qplot()
-  
+* qplot(x,y,data, color, geom, fill, facets = .~drv or drv~.), basic function for the package
+* Few next points are about gplot()
+* Always needs to have data.frame
+* Factors are important to labeled
+* hides what goes underneath 
+* not very flexible
+
+* ggplot() is core function and more flexible than gplot()
+* components of ggplot()
+* needs data frame
+* aesthetic: color, shape size
+* geoms: geometic objects such as point, lines, shapes
+* facets: for conditional plots
+* stats: stat transformations, binning, quantile, smoothing
+* scales
+* Can be built piece by piece
+* Additional functions needed
+* g <- ggplot()
+* g + geom_point()+ geom_smooth()+facet_grid()
+* xlab(), ylab(), labs(), ggtitle()
+* theme()
+* theme_gray(), theme_bw()
+* if you use ylim(), the outliers are excludid
+* coord_cartesian(ylim()) let's you have the outlier but not show if it's outside the range
+* cut()
+
+
+ 
 ### Creating plot file
 * Vector formats, nice in scaling
 * pdf()
