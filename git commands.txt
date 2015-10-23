@@ -31,5 +31,6 @@ Check in which branch you are:
 Get back to the master branch:
 	git checkout master
 	
-Tassa olisi nyt tama alkuun
+Another git commands:
+	git status
 	
