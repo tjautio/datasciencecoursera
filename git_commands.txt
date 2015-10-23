@@ -13,6 +13,7 @@ When you have a forked repo you want to clone it on your computer:
 
 When you have a new file at your own computer and want it to be under version control:
 	git add .   (adds all new files in working directory)
+	git add -- all (also takes deletions into account)
 	git add -u	(tracks all the name changes and deletes)
 	git add -A 	(does th both above)
 
