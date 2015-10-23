@@ -1,0 +1,36 @@
+Commands:
+Checking the working directory
+	pwd
+
+When you have a local repository use:
+	git init
+	
+Then you want to link it to the one in GitHub:
+	git remote add origin https://github.com/tjautio/filename.git
+	
+When you have a forked repo you want to clone it on your computer:	
+	git clone https://github.com/tjautio/filename.git
+
+When you have a new file at your own computer and want it to be under version control:
+	git add .   (adds all new files in working directory)
+	git add -u	(tracks all the name changes and deletes)
+	git add -A 	(does th both above)
+
+When you have changed your file and want to commit it:
+	git commit -m "message"
+	
+When you want to upload your files on the Github:
+	git push
+	
+Then you have different branches if there are several users. Creates new branch:
+	git checkout -b branchname
+	
+Check in which branch you are:
+	git branch
+	
+Get back to the master branch:
+	git checkout master
+	
+Another git commands:
+	git status
+	
