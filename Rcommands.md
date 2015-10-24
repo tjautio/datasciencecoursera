@@ -31,6 +31,7 @@
 * tail()
 * split(dataset, dataset$"label of the variable")
 * gl()
+* set.seed(1984)
 
 ### Data types lectures
 * vector(class, length) creastes on empty vector of particular class and lenght
@@ -397,6 +398,25 @@ x <- function(args){
 * dev.copy(), copies from one to other graphics device
 * dev.copy2pdf(), remember to check, ther might be little differences
  
+### Clustering
+* dist()
+* hclust()
+* myplclust()-function, which can be downloaded form the course webpage
+* heatmap()
+* kmeans()
+* svd()
+* prcomp()
+
+### Colors
+* gray(), gives you all the shades of grey
+* rgb()
+* smoothScatter() when plotting a huge amount of points
+* grDevices package
+* colorRamp() takes a palette and gives you combination of them
+* colorRampPalette() changes the palettes( think heat and topo sets)
+* colors()
+* RColorBrewer package
+* brewer.pal()
  
 
 
