@@ -919,10 +919,44 @@ rbinom(1,1,0.5)
 * Also some on CRAN
 * default is screen device, only one
 
+## Clustering
+* you have to define when observations are close 
 
+### Hierarchical clustering
+* an agglomerative approach
+* Find closest two things
+* Put them together and remove the old observations
+* find the next closest ones
+* produces a tree of how things where put together
+* distance metrics: euclidian distance, correlations, mannhattan distance
+* merging methodology: average of furthest apart of the clusters, avg of center of gravity
+* heatmap() runs cluster analysis for rows and columns
+* should be used for exploration
 
+### How to run the algorithm
+* 1) you need the distance of the all different points by function dist()
+* 2) merge the closest points. You can use hclust()
 
+### K-means clustering
+* kmeans()
+* fixed number of clusters that is defined first
+* guess the center of gravity for every clusters
+* iterative process
+* Probably good idea to run it couple of times and see if you get similar results
 
+### Principal Components Analysis and Singular Value Decomposition
+* The purpose is to decrease the dimension of the data
+* SVD is a matrix decomposition X = UVD'; svd()
+* PCA related to SVD; prcomp()
+* PCA and SVD are practically the same thing
+* Doesn't work with NA's in the data
+* impute- package 
 
+### Colors in R plotting
+* col = 1(black),2(red),3(green)
+* maybe trying to use colors that would fit better with the thing that you're plotting
+* grDevices -package: colorRamp(), colorRampPalette()
+* RColorBrewer -package: 3 palettes: Sequential, Diverging, Qualitative
+* colorspace package
 
 

@@ -396,7 +396,7 @@ x <- function(args){
 * dev.cur() currently active graphics device
 * dev.set(), sets to the graphic device you want to use
 * dev.copy(), copies from one to other graphics device
-* dev.copy2pdf(), remember to check, ther might be little differences
+* dev.copy2pdf(), remember to check, there might be little differences
  
 ### Clustering
 * dist()

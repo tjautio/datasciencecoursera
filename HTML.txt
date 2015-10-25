@@ -5,10 +5,22 @@ Straing with HTML:
 <>		$$ tags
 
 <head></head> 	$$ Not visible on the page, in the bar of the page
+
 <title></title> 
+
 <body></body> 	$$ The actual text on the page
+
 <p></p>			$$ inside the body created new paragraph
+
 <h1></h1>		$$ heading, I guess you can go down few times, at least h2 works. Ok, till 6.
 <strong></strong> $$ boldface
+
 <a href="http://www.codecademy.com"> a site </a> $$ adding a hyperlink
+
 <img src="https://s3.amazonaws.com/codecademy-blog/assets/f3a16fb6.jpg" /> $$ adding a picture. Note: no closing tags
+
+<ol></ol> numbered list
+	<li></li> these are the items inside the list
+	
+<ul></ul> unordered list
+	<li></li> these are the items inside the list
