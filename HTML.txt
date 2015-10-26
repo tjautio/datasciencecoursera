@@ -1,4 +1,4 @@
-Straing with HTML:
+Starting with HTML:
 <!DOCTYPE html> $$ this tells what is the language to the browser
 <html> 	$$ Starts the document
 </html> $$ ends the document
@@ -24,3 +24,20 @@ Straing with HTML:
 	
 <ul></ul> unordered list
 	<li></li> these are the items inside the list
+	
+<!-- --> This is a comment
+
+<p style = "font-size: 10px"> Some text for you to make tiny! </p> adding atributes like the font size
+adding several: "font-size: 10px; color: blue"
+
+<strong></strong> $$ boldface part of the text between the tags
+<em></em>			italic
+
+Possible atributes: 
+- font-size
+- color (color-key http://www.w3.org/TR/css3-color/#svg-color)
+- font-family (www.w3.org/TR/CSS21/fonts.html#generic-font-families)
+- background-color; can be used for sentences or larger parts of the text
+- text-align
+
+
