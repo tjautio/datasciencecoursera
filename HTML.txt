@@ -1,4 +1,7 @@
 Starting with HTML:
+
+Basics:
+
 <!DOCTYPE html> $$ this tells what is the language to the browser
 <html> 	$$ Starts the document
 </html> $$ ends the document
@@ -19,6 +22,9 @@ Starting with HTML:
 
 <img src="https://s3.amazonaws.com/codecademy-blog/assets/f3a16fb6.jpg" /> $$ adding a picture. Note: no closing tags
 
+
+Lists:
+
 <ol></ol> numbered list
 	<li></li> these are the items inside the list
 	
@@ -26,6 +32,8 @@ Starting with HTML:
 	<li></li> these are the items inside the list
 	
 <!-- --> This is a comment
+
+Styling:
 
 <p style = "font-size: 10px"> Some text for you to make tiny! </p> adding atributes like the font size
 adding several: "font-size: 10px; color: blue"
@@ -41,3 +49,30 @@ Possible atributes:
 - text-align
 
 
+Table:
+<table border = 1px>
+		<thead>
+			<tr> Add the row
+				<th></th> Adds the cells
+			
+			</tr>
+			<tr>
+                <th colspan = "2"></th> extend to more than one cell
+            </tr>
+		</thead>
+		
+		<tbody> not necessary
+		<tr>
+			<td></td> table data; adds data to a single cell
+		</tr> table row
+		</tbody>
+</table> adds a table
+
+Attributes in tables:
+- padding:1px Add layer around the words in tables
+- border-left/right/bottom/top: solid black
+
+Structuring the page:
+
+<div></div>
+<span style = ""></span> can be added around words and smaller components of the text to give them attributes in a similar way than e.g. <em></em>
