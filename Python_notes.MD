@@ -1,6 +1,6 @@
 ## Some Python notes:
 
-* # Comment out single line
+* \# Comment out single line
 
 * """Everything between these are commented out"""
 
