@@ -1,5 +1,5 @@
 ## Some Python notes:
-
+### Mostly working with strings
 * \# Comment out single line
 
 * """Everything between these are commented out"""
@@ -14,3 +14,22 @@
 * str(), converts the value in string e.g. str(5) prints "5"
 * print prints the stuff you define, works also with "sth "+ "and " + "sth"
 e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be strings#
+
+### Dates
+
+* from datetime import datetime
+* datetime.now()
+* datetime.now().year/month/day/hour/minute/second
+
+### Control flow
+
+* not is evaluated first;
+* and is evaluated next;
+* or is evaluated last.
+* 	if Statement:
+		then what
+	elif Statement:
+		then what
+	else:
+		then what
+
