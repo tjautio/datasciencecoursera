@@ -79,7 +79,12 @@ e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be s
 * Adding: b['d']=4 or chnaging if 'd' already exists
 * del b['d'] deletes d:4 from the dictionary
 * Dictionaries can hold lists, strings, ints etc.
-* 
+
+
+### For loop
+* for i in [list]:
+	do smth
+	
 
 ### for loop
 * for variable in list_name:
