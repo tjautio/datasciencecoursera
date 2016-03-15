@@ -14,6 +14,11 @@
 * str(), converts the value in string e.g. str(5) prints "5"
 * print prints the stuff you define, works also with "sth "+ "and " + "sth"
 e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be strings#
+* when you need to get a float from two integers use float()
+* \ continuation character that can be used to break lines
+* list.append(n) adds a term n at the end of the list
+* list.pop(n), del(list[n]) removes an element with index n
+* list.remove(n), removes the term n if n is in the list
 
 ### Dates
 
@@ -89,3 +94,6 @@ e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be s
 ### for loop
 * for variable in list_name:
 	Do things
+
+	
+	
