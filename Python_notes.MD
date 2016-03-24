@@ -19,7 +19,7 @@ e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be s
 * list.append(n) adds a term n at the end of the list
 * list.pop(n), del(list[n]) removes an element with index n
 * list.remove(n), removes the term n if n is in the list
-
+d
 ### Dates
 
 * from datetime import datetime
@@ -76,6 +76,8 @@ e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be s
 * a.insert(0, 0) = [0,1,2,3,4]
 * a.sort() re-organises the list
 * a.remove(3)
+* zip() combines two(or more) lists as pairs and stops at the end of the shorter one
+* enumerate() creates an indexing
 
 * empty dictionary y = {}
 * Dictionaries have keys
@@ -84,16 +86,32 @@ e.g. print "Let's not go to %s. 'Tis a silly %s." % (var1, var2) #Vars must be s
 * Adding: b['d']=4 or chnaging if 'd' already exists
 * del b['d'] deletes d:4 from the dictionary
 * Dictionaries can hold lists, strings, ints etc.
-
+* y.items() prints the key-value pairs
+* y.keys() prints all the keys
+* y.values() print all the values
 
 ### For loop
 * for i in [list]:
 	do smth
-	
+* this gives you the index that you use to iterate over the list
 
 ### for loop
 * for variable in list_name:
 	Do things
+* this gives you the actual list element
+	
+* print something , (means in a loop that the things stay on the same line)
+* for index, item in enumerate(list):
+    print index, item
 
+### while loop
+* while count < finite number: 
+	do things until break
+* while loop_condition:
+	do things
+	set loop_condition = FALSE
+* good use for while loops is user prompts when we need a correct answer
+* while/else: else condition is executed when while is false
 	
-	
+### List comprehension
+* list = [i for i in range() if sth]
