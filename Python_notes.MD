@@ -115,3 +115,11 @@ d
 	
 ### List comprehension
 * list = [i for i in range() if sth]
+
+### List slicing
+* [start:end:stride]
+* if one of them is left empty then the default is used, start = 0, end = end of the list, stride = 1
+
+### Anonymous functions
+* passing functions like they're values or variables
+* lambda x: x sthg

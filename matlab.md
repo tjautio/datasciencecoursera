@@ -73,6 +73,8 @@ These are basic notes about MATLAB syntax etc.
 	
 * 	if <condition>
 			<statement>
+	elseif <expression>
+		<statement>
 	else 
 		<statement>
 	end
@@ -80,3 +82,8 @@ These are basic notes about MATLAB syntax etc.
 		disp(i)
 	end
 	
+* function[output1, output2]= myfun(input1, input2) 
+	<does function stuff>
+	end
+
+	This must be also saved in the working folder with a name myfun.m
