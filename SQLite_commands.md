@@ -44,6 +44,53 @@ albums.name AS 'Album'; here the column name is changed
 
 
 ## Notes from Tietokantojen perusteet kurssilta
+### Kasiteanalyysi - Conceptual modeling
+* kasitteiden ja niiden yhteyksien selvittamisen prosessi
+* kasite - ei vaadi jonkin muun olemassaoloa
+* attribuutti - vaatii muun olemassaolon, esi. asiakasnumero
+* vaiheet:
+1) kartoita kasite-ehdokkaat kohdealeelta (problem domain)
+2) karsi ehdokkaita
+	i) onko tietosisalto valttamatonta
+	ii) onko asia riittavan tarkea aihealueelle
+3) Tunnista kasitteiden yhteydet
+4) Maarittele yhteyksien osallistumisrajoitteet
+5) Maarittele attribuutit
+
+### Attribuuttien datatyypit
+* Atribuutit tarvitsevat nimen ja datatyypin
+* SQLite pyrkii valitsemaan tyypin dynaamisesti jos ei ole maaritelty
+* Tyypillisia datatyyppeja:
+1) varchar(n) n:n pituinen merkkijono
+2) integer
+3) float
+4) date
+5) timestamp
+
+* Rajoitteet ja avaimet
+* PRIMARY KEY ei saa koskaan olla null (SQLite luo automaattisesti)
+* NOT NULL tells that the info is required
+* UNIQUE
+* CHECK (attr1 > 0)
+* CONSTRAINT nameforconstraint CHECK (ehto AND ehto AND ...) This comes after the attributes
+* LENGHT(merkkijono)
+* FOREIGN KEY(sarake) REFERENCES ViitattavaTaulu(viitattavaSarake) After the atributes
+* CREATE INDEX voi nopeuttaa hakuja erityisesti isoista aneistoista
+
+Esim.
+CREATE TABLE Opiskelija
+(
+    opiskelijanumero integer PRIMARY KEY,
+    nimi varchar(200) NOT NULL,
+    syntymävuosi date NOT NULL,
+	email varchar(50) NOT NULL UNIQUE,
+    pääaine varchar(50)
+)
+
+
+
+
+### SQLite
 * SQL is case insensitive
 * Still:
 * commands in ALL CAPS
@@ -81,7 +128,8 @@ SELECT Kurssi.nimi AS Kurssi, Opiskelija.nimi AS Opiskelija
     FROM Kurssi
     INNER JOIN Kurssisuoritus
         ON Kurssi.kurssitunnus = Kurssisuoritus.kurssi
-    INNER JOIN Opiskelija		
+    INNER JOIN Opiskelija
+* JOIN is equivalent to INNER JOIN	
 * LEFT JOIN instead of INNER JOIN gives also the rows of the tables that are empty
 * RIGHT JOIN gives kind of the opposite to LEFT JOIN
 * FULL JOIN gives everything
@@ -90,14 +138,47 @@ SELECT Kurssi.nimi AS Kurssi, Opiskelija.nimi AS Opiskelija
 * BETWEEN N AND M
 * NOT BETWEEN N AND M 
 * IN (1,2,3,...)
-* NOT IN (1,2,3,...)
+* NOT IN (1,2,3,...) tai voidaan luoda alikysely sulkeisiin)
 * ORDER BY ASC/DESC
 * LIMIT number OFFSET if you want to start from somewhere else than 1
+* SELECT * FROM Tabl1 t1,... means that you rename the Table1 as t1
+* SELECT attr1 FROM Table1 t1
+	LEFT JOIN Table2 t2
+	ON t1.attr1 = t2.attr2
+	WHERE t2.attr3 IS null This gives all attr1's, which have null as attr3
+Equivalent:
+* SELCT attr1 FROM Table1 t1
+	WHERE t1.attr1
+		NOT IN (SELECT attr2 FROM Table2)
+* EXISTS, NOT EXISTS jossain joukossa
+* COUNT(sarake) laskee lukumaaran
+* AVG(sarake) keskiarvo
+* SUM() summa
+* MIN(), MAX()
+* GROUP BY sarake, sarake2 ... ryhmittelee sarakkeiden mukaan
+* GROUP BY tarvitaan yleensa, jos lasketaan sarakkeista tunnuslukuja
+* HAVING voidaan kayttaa GROUP BY jalkeen asettamaan ehtoja riveille
+* There often is a way to check what are the tables but that depends on the SQL system
+* SQLite: SELCT * FROM sqlite_master
+* PRAGMA TABLE_INFO(Table1)
+* PRAGMA foreign_keys = ON; laittaa foreign_keys tarkistukset paalle
+* CREATE VIEW Nakymannimi AS kysely(siis SELECT...); luo valiaikaisen nakyman
+* DROP VIEW poistaa nakyman
 
 
-### Commands - DELETE, INSERT
+### Commands - DELETE, INSERT, CREATE TABLE, ALTER TABLE
 * DELETE FROM Table1 WHERE attr1 = "Attr" Deletes info from table1
-* INSET INTO Table1 (attr1, attr2,...) VALUES 'Attr1', 'Attr2', ... inserts new info into table1
+* INSET INTO Table1 (attr1, attr2,...) VALUES ('Attr1', 'Attr2',...) inserts new info into table1
 * If the info goes into every column then the column names are not needed
+* CREATE TABLE (attr1, attr2,...)
+* ALTER TABEL Tabel1 ADD COLUMN/RENAME TO
+
+
+
+Opiskelija (opiskelijanumero integer, nimi text, syntymävuosi integer, pääaine text)
+Kurssi (kurssitunnus integer, nimi text, kuvaus text)
+Kurssisuoritus (opiskelija integer, kurssi integer, päivämäärä date, arvosana integer, opintopistemäärä integer)
+Tehtävä (tunnus integer, nimi text, kuvaus text)
+Kurssitehtävä (tehtävä integer, kurssi integer) 
 
 
