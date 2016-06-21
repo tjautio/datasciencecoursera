@@ -43,6 +43,7 @@ public class Esimerkki {
 * // comment out
 * System.out.println("txt"); prints the line and ends the row
 * System.out.print("txt" + variable); print the line but does not end the row
+* In System.out.print(...+"\t"+...) prints tab
 * if one part of the prev. is string then also the other is converted
 * but with parenthesis this can be averted
 * \n Changes line in the text
@@ -151,6 +152,7 @@ ja sen jalkeen palataan takaisin mainiin.
 * lista.remove(3); poistaa indeksilla 3 olevan elementin. Muista indeksointi alkaa 0sta
 * lista.contains("susi"); boolean onko "susi" listalla
 * ArrayList(Integer) luvut:
+* Methods change the original ArrayList object and not a copy of it
 * luvut.remove(n); poistaa n. elementin listalta. Jos halutaan poistaa luku n
 * luvut.remove(Integer.valueOf(2)); poistaa luvun, jonka arvo on 2.
 * ArrysList:lle on olemassa oma for each loop:
@@ -162,5 +164,46 @@ ja sen jalkeen palataan takaisin mainiin.
 * Collections.sort(lista); jarjestaa
 * Collections.reverse(lista); kaantaa
 * Collections.shuffle(lista); sekoittaa
+
+### Hashmap - tietoparien tallentaminen
+* HashMap<String, String> postinumerot = new HashMap<>();
+* postinumerot.put("00530", "Helsinki"); lisaa avain - arvo parin olioon
+* postinumerot.get("00530"); palauttaa arvon, johon liittyy avain "00530"
+* postinumerot.isEmpty(); true if hashmap object is empty
+* postinumerot.containsKey(whatever); true if the key is in the object
+* Similarly as with ArrayList methods change the original hashmap object
+* if you want to update value you need to get the old and add the change to it
+
+
+### Classes
+* e.g.
+public class Henkilo {
+    private String nimi;
+    private int ika;
+}
+* With this specification nimi and ika are capsulated inside the object
+* When you want to create your own object (for example Henkilo) it happens as follows:
+* Henkilo nimi = new Henkilo("Suen Tassu");
+
+* Next you need the constructor:
+public class Henkilo {
+    private String nimi;
+    private int ika;
+
+    public Henkilo(String nimiAlussa) {
+        this.ika = 0;
+        this.nimi = nimiAlussa;
+    }
+}
+* this. command means that in this particular object the attribute gets this particular value
+* next we need to add methods for the object. It works as we have already done
+
+### Object oriented programming
+* In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
+* With objects the idea is kind of the same. ArrayLists are objects
+
+
+
+
 	
 

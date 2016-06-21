@@ -7,6 +7,7 @@ When you have a local repository use:
 	
 Then you want to link it to the one in GitHub:
 	git remote add origin https://github.com/tjautio/filename.git
+	https://github.com/Ukonhattu/TiKaPe.git
 	
 When you have a forked repo you want to clone it on your computer:	
 	git clone https://github.com/tjautio/filename.git
@@ -34,4 +35,4 @@ Get back to the master branch:
 	
 Another git commands:
 	git status
-	
+	git clone
