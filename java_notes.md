@@ -197,10 +197,17 @@ public class Henkilo {
 }
 * this. command means that in this particular object the attribute gets this particular value
 * next we need to add methods for the object. It works as we have already done
+* expect that static is not used with classes
 
 ### Object oriented programming
 * In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
 * With objects the idea is kind of the same. ArrayLists are objects
+* Java includes toString method:
+public String toString() {
+        return this.nimi + ", ikä " + this.ika + " vuotta";
+    }
+* if you System.out.println(class); it returns the same as System.out.println(class.toString());
+
 
 
 
