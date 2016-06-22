@@ -51,6 +51,7 @@ public class Esimerkki {
 * object.length gives the length of the object
 * string.charAt(n); returns the nth character in the string
 * string.indexOf("string"); returns the first index value of the word (note: indexation start from 0), if not exist then -1
+* variables are defined only in the blocks they're defined
 
 * var++; variable's value can is incrreased by one
 * var--; minus 1
@@ -59,6 +60,7 @@ public class Esimerkki {
 * toimii myos muille peruslaskutoimituksille
 * merkkinjonon indeksointi alkaa nollasta
 * Math.pow(kantaluku, exponentti); potenssi
+* String.format("%.2f", luku) double with two decimals
 
 
 ### Conditional statements
@@ -198,6 +200,28 @@ public class Henkilo {
 * this. command means that in this particular object the attribute gets this particular value
 * next we need to add methods for the object. It works as we have already done
 * expect that static is not used with classes
+* there can be several simultaneous constructors in the same class
+* The parameter types must differ
+* Here is how it is possible to shorten the expression:
+* public Henkilo(String nimi) {
+    this(nimi, 0);  // suorita tässä toisen konstruktorin koodi ja laita ika-parametrin arvoksi 0
+}
+
+public Henkilo(String nimi, int ika) {
+    this.nimi = nimi;
+    this.ika = ika;
+    this.paino = 0;
+    this.pituus = 0;
+}
+* The same thing can be done also with methods.
+* Example below:
+* public void vanhene() {
+    this.ika = this.ika + 1;
+}
+
+public void vanhene(int vuodet) {
+    this.ika = this.ika + vuodet;
+}
 
 ### Object oriented programming
 * In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
@@ -207,9 +231,15 @@ public String toString() {
         return this.nimi + ", ikä " + this.ika + " vuotta";
     }
 * if you System.out.println(class); it returns the same as System.out.println(class.toString());
+* Object oriented programming is about capsulating the concepts into their own objects
 
 
-
+### Random numbers
+* import java.util.Random;
+...{
+Random rands = new Random();
+rands.nextInt(10); gives the random number between 0-9
+}
 
 
 	
