@@ -61,6 +61,7 @@ public class Esimerkki {
 * merkkinjonon indeksointi alkaa nollasta
 * Math.pow(kantaluku, exponentti); potenssi
 * String.format("%.2f", luku) double with two decimals
+* Calendar.getInstance().get(Calendar.DATE/MONTH/YEAR);
 
 
 ### Conditional statements
