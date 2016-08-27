@@ -1,6 +1,21 @@
 ## Java notes
 These are some notes about Java for the course: ohjelmoinnin perusteet 
 
+
+### Basic coding ideas:
+* Etene pieni askel kerrallaan
+** Yritä pilkkoa ongelma osaongelmiin ja ratkaise vain yksi osaongelma kerrallaan
+** Testaa aina että ohjelma on etenemässä oikeaan suuntaan eli että osaongelman ratkaisu meni oikein
+**Tunnista ehdot, minkä tapauksessa ohjelman tulee toimia eri tavalla. Esimerkiksi yllä tarkistus, jolla katsotaan onko sana jo syötetty, johtaa erilaiseen toiminnallisuuden.
+* Kirjoita mahdollisimman "siistiä" koodia
+** sisennä koodi
+** käytä kuvaavia muuttujien ja metodien nimiä
+** älä tee liian pitkiä metodeja, edes mainia
+** tee yhdessä metodissa vaan yksi asia
+** poista koodistasi kaikki copy-paste
+** korvaa koodisi "huonot" ja epäsiistit osat siistillä koodilla
+
+
 ### Notes:
 * lines needs to be ended with ;
 * Code needs to have structure(runko) e.g.
@@ -62,6 +77,9 @@ public class Esimerkki {
 * Math.pow(kantaluku, exponentti); potenssi
 * String.format("%.2f", luku) double with two decimals
 * Calendar.getInstance().get(Calendar.DATE/MONTH/YEAR);
+* String class commands:
+	- .toLowerCase() makes all the latters lower case
+	- .trim() removes extra spaces from the beginning and the end
 
 
 ### Conditional statements
@@ -224,6 +242,11 @@ public void vanhene(int vuodet) {
     this.ika = this.ika + vuodet;
 }
 
+
+* public Class{
+	private final variable;
+This means that the value of the variable can't be changed after the class has been created
+
 ### Object oriented programming
 * In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
 * With objects the idea is kind of the same. ArrayLists are objects
@@ -241,6 +264,70 @@ public String toString() {
 Random rands = new Random();
 rands.nextInt(10); gives the random number between 0-9
 }
+
+### Reading files
+* Reading text from file
+* ArrayList<String> rivit = new ArrayList<>();
+
+// luodaan lukija tiedoston lukemista varten
+try (Scanner lukija = new Scanner(new File("tiedosto.txt"))) {
+
+  // luetaan kaikki tiedoston rivit
+  while (lukija.hasNextLine()) {
+    rivit.add(lukija.nextLine());
+  }
+} catch (Exception e) {
+  System.out.println("Virhe: " + e.getMessage());
+}
+* Reading integers from file
+* ArrayList<Integer> rivit = new ArrayList<>();
+        try (Scanner lukija = new Scanner(new File(tiedosto))) {
+            while (lukija.hasNextLine()) {
+                rivit.add(Integer.parseInt(lukija.nextLine()));
+            }
+        } catch (Exception e) {
+            System.out.println("Virhe: " + e.getMessage());
+
+* Reading webpages
+* ArrayList<String> rivit = new ArrayList<>();
+
+// luodaan lukija web-osoitteen lukemista varten
+try (Scanner lukija = new Scanner(new URL("http://www.cs.helsinki.fi/home/").openStream())) {
+
+  // luetaan osoitteesta http://www.cs.helsinki.fi/home/
+  // saatava vastaus 
+  while (lukija.hasNextLine()) {
+    rivit.add(lukija.nextLine());
+  }
+} catch (Exception e) {
+  System.out.println("Virhe: " + e.getMessage());
+}
+}
+
+### Tables - taulukot
+* int[] luvut = {100, 1, 42};
+* they are immutable
+* can contain all he types of variables;
+* System.out.println(luvut[0]);  // tulostaa luvun taulukon indeksistä 0
+* table.length gives the size of the table
+* for each loop works as in ArrayLists
+* vaihtoehtoinen tapa luoda taulukko:
+ int alkioita = 99;
+int[] taulukko = new int[alkioita];
+* matriisi tyyppinen taulukko:
+int rivit = 2;
+int sarakkeet = 3;
+int[][] kaksiulotteinenTaulukko = new int[rivit][sarakkeet];
+
+### static
+* static methods are linked to a class
+* static methods can handle only numbers that are given as parameters
+* methods without static are linked to objects (i.e. needs to be used with objects)
+* all methods that are suppose to change the state of an object should be written without static
+* static methods are useful for example checking some features of the objects
+
+
+
 
 
 	
