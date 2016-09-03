@@ -318,6 +318,7 @@ int[] taulukko = new int[alkioita];
 int rivit = 2;
 int sarakkeet = 3;
 int[][] kaksiulotteinenTaulukko = new int[rivit][sarakkeet];
+* Tables can contain any type of objects
 
 ### static
 * static methods are linked to a class
