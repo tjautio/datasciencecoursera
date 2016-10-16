@@ -15,6 +15,10 @@ These are some notes about Java for the course: ohjelmoinnin perusteet
 ** poista koodistasi kaikki copy-paste
 ** korvaa koodisi "huonot" ja epäsiistit osat siistillä koodilla
 
+* kayta metodeja jasentamaan koodia ja "ratkaisemaan" pienia ongelmanpalasia
+* jos metodit alkavat tehda liian monia asioita luettavuus karsii ja metodi on syyta 
+jakaa osametodeiksi
+
 
 ### Notes:
 * lines needs to be ended with ;
@@ -154,6 +158,9 @@ ja sen jalkeen palataan takaisin mainiin.
 * public static int (int kertoo, etta metodi palauttaa kokonaisluvun)
 * return metodissa maarittaa palautusarvon
 * ArrayList is also valid parameter for a method
+* static metodit liittyvat metodin sisaltamaan luokkaan ja ovat apumetodeja
+* ei-static metodit ovat metodeja, joilla muokataan luokan ilmentymia
+* public nakyy kaikille, private vain luokan sisalla
 
 
 ### Libraries:
