@@ -1,0 +1,21 @@
+luokat:
+lentokone
+	- kapasiteetti
+	- tunnus
+
+	
+	- tulostaKone
+
+Laivue
+	- tulostaKaikki
+	- lisaaKone
+
+lento
+	- lahtopaikka
+	- kohdepaikka
+	- lentokone
+
+Lennot:
+
+	- lisaaLento
+	- tulostaLennot

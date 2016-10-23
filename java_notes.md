@@ -77,6 +77,7 @@ suprising way. Use inequalities instead.
 * string.charAt(n); returns the nth character in the string
 * string.indexOf("string"); returns the first index value of the word (note: indexation start from 0), if not exist then -1
 * variables are defined only in the blocks they're defined
+* "\n" is same as pressing enter if you make some input for Scanner
 
 * var++; variable's value can is incrreased by one
 * var--; minus 1
@@ -130,6 +131,13 @@ do something}
 ### importing tool to read text:
 * import java.util.Scanner;
 * Scanner lukija = new Scanner(System.in);
+* String input = "lisaa\n"  + "juusto\n" +     "cheese\n" +
+                   "lisaa\n"  + "olut\n"   +     "beer\n" +
+                   "lisaa\n"  + "kirja\n"  +     "book\n" +
+                   "lisaa\n"  + "tietokone\n" +  "computer\n" +
+                   "lisaa\n"  + "auto\n"   +     "car\n" +
+                   "lopeta\n";
+* Scanner lukija = new Scanner(input) reads the inputed text
 * String teksti = lukija.nextLine()
 * to get integers out from text 
 * Integer.parseInt(lukija.nextLine())
@@ -209,7 +217,7 @@ lisaamalla muuttujan eteen static
 * Collections.reverse(lista); kaantaa
 * Collections.shuffle(lista); sekoittaa
 
-### Hashmap - tietoparien tallentaminen
+### Hashmap - tietoparien tallentaminen, hajautustaulu
 * HashMap<String, String> postinumerot = new HashMap<>();
 * postinumerot.put("00530", "Helsinki"); lisaa avain - arvo parin olioon
 * postinumerot.get("00530"); palauttaa arvon, johon liittyy avain "00530"
@@ -217,6 +225,13 @@ lisaamalla muuttujan eteen static
 * postinumerot.containsKey(whatever); true if the key is in the object
 * Similarly as with ArrayList methods change the original hashmap object
 * if you want to update value you need to get the old and add the change to it
+* Hashmap is good way to store information when information is needed to retrieve often.
+It is more efficient information structure when the searching the information than ArrayList
+* the key to the efficiency gain is that we know what are used as a key
+* to use for loop for all the keys in Hasmap you need to use .keySet() method
+for (String avain : sanaparit.keySet()) {
+    System.out.print( avain + " " );
+}
 
 
 ### Classes
