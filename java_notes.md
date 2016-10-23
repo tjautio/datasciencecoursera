@@ -37,12 +37,16 @@ public class Esimerkki {
 
 ### Variables
 * when declaring variables for the first time
-	int a = 12
+	int a = 12, this can take values only to little over 2 billion
+	long a = 12, this can take values to 10^17
 	double b = 3.14
+	class big decimal for big decimal numbers
 	String c = "boo"; tai: String c = new String("boo");
 	boolean d = true or false
 	char var = 'a' tallentaa yksittaisen merkin
 	int[] = {1,2,3}; is a list
+* When using the doubles there is a possiblity that the rounding errors affect in 
+suprising way. Use inequalities instead.
 * sana.isEmpty() toimii String muuttujilla
 
 * if the value changes there is no need for it
@@ -53,6 +57,8 @@ public class Esimerkki {
 * % is for remainder of the divisions
 * variables do not exsist before they are declared
 * variables exist also only inside the object they have been introduced
+
+* alkeis- ja viitemuuttujat. Alkeismuuttujat sisaltavat arvon itsessaan, viitemuuttujat viittaavat esimerkiksi olion ilmentymaan.
 
 ### NetBeans
 * Alt+Shift+F helps with most intendation issues
@@ -160,8 +166,18 @@ ja sen jalkeen palataan takaisin mainiin.
 * ArrayList is also valid parameter for a method
 * static metodit liittyvat metodin sisaltamaan luokkaan ja ovat apumetodeja
 * ei-static metodit ovat metodeja, joilla muokataan luokan ilmentymia
+* static metodeja kaytetaan aina luokan nimen kautta, myos luokkakohtaisia muuttujia voidaan luoda
+lisaamalla muuttujan eteen static
+* final maare tarkoittaa, etta muuttujan arvoa ei voi myohemmin enaa muuttaa ja sen on aina sisallettava arvo
+* ei-static muuttujat ovat olion muuttujia eli siis jokaisella oliolla on omat muuttujan arvonsa
+* olion sisalla non-static muuttujia ja metodeja voi myos kutsua ilman olion nimea
+* huomaa, etta metodien sisaiset muuttujat ovat vain metodin apumuuttujia, eivat oliomuuttujia
 * public nakyy kaikille, private vain luokan sisalla
 
+
+### Luokkakirjastot - class libraries
+* such as Math.
+* includes general methods and variables
 
 ### Libraries:
 * import java.util.*; tuo kaikki util. kirjastot
@@ -253,6 +269,8 @@ public void vanhene(int vuodet) {
 * public Class{
 	private final variable;
 This means that the value of the variable can't be changed after the class has been created
+* Luokkakirjastot ks. ylla
+* aksessori (accessor?) is a method that lets you read the value of a variable
 
 ### Object oriented programming
 * In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
