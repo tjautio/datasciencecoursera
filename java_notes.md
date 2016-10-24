@@ -367,6 +367,15 @@ int[][] kaksiulotteinenTaulukko = new int[rivit][sarakkeet];
 * all methods that are suppose to change the state of an object should be written without static
 * static methods are useful for example checking some features of the objects
 
+### periytymisesta
+* Esimerkiksi Object luokalla on olemassa kutsu toString()
+tosin tama ei ole useinmiten se mita haluamme, mutta kun kirjoitamme metodin
+@Override
+public String toString(){
+return "blaah, blaah"
+}
+* .equals() komento periytyy muillekin olioille. Mutta huomaa, etta se tarkastelee ovatko kaksi oliota samoja, EI ovatko olioiden sisallot samat!!!
+
 
 
 
