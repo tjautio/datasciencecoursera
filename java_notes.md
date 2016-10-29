@@ -91,6 +91,7 @@ suprising way. Use inequalities instead.
 * String class commands:
 	- .toLowerCase() makes all the latters lower case
 	- .trim() removes extra spaces from the beginning and the end
+* .getClass() returns the class of the object
 
 
 ### Conditional statements
@@ -217,6 +218,7 @@ lisaamalla muuttujan eteen static
 * Collections.reverse(lista); kaantaa
 * Collections.shuffle(lista); sekoittaa
 
+
 ### Hashmap - tietoparien tallentaminen, hajautustaulu
 * HashMap<String, String> postinumerot = new HashMap<>();
 * postinumerot.put("00530", "Helsinki"); lisaa avain - arvo parin olioon
@@ -286,6 +288,8 @@ public void vanhene(int vuodet) {
 This means that the value of the variable can't be changed after the class has been created
 * Luokkakirjastot ks. ylla
 * aksessori (accessor?) is a method that lets you read the value of a variable
+* Geneerisyys. Luokille on mahdollista antaa parametrina vapaavalintaisen tyyppinen olio
+esim. public class Luokka<T>{ private T alkio...}
 
 ### Object oriented programming
 * In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
@@ -375,6 +379,51 @@ public String toString(){
 return "blaah, blaah"
 }
 * .equals() komento periytyy muillekin olioille. Mutta huomaa, etta se tarkastelee ovatko kaksi oliota samoja, EI ovatko olioiden sisallot samat!!!
+* contains() metodi kayttaa .equals metodia ja se ei toimi oikein ellei sita aseteta luokkiin
+tama on siis tarkeaa, jos haluataan kayttaa hakua ArrayListeilla
+* hashCode() on sama jos halutaan kayttaa hashMapia, en ihan viela ymmartanyt tata, mutta se tuintui toimivan parhaiten kaytettyna String-muuttujille
+* jos luokkaa halutaan kayttaa HashMap-avaimena, niin silloin equals() taytyy maaritella uudestaan siten, etta sisallollisesti samat oliot tuottavat true tuloksen ja hashCode() siten, etta saman sisaltoinen olio tuottaa saman arvon
+
+### Rajapinta - Interface
+* public interface Nimi(), ovat kuin luokkia, mutta eivat aina sisalla metodien
+toteutusta
+* luokka voi kayttaa rajapinnan runkoa ja maaritella metodien toteutuksen (tama on pakko olla)
+* public class Viesti implements Nimi{}
+* alustettaessa muuttujaa myos rajapinnan nimea voidaan kayttaa muuttujat tyyppina
+* tyyppimuunnos onnistuu vain jos muuttuja on oikeasti tyyppia
+* Rajapinta voi olla myos paluuarvo ja nain ollen on mahdollista palauttaa rajapinnan toteuttavia luokkai ilman, etta itse luokka on varmuudella tiedossa
+* Javassa on lukuisia valmiita rajapintoja. Esim. List, Map, Set, Collection
+
+### List:
+* ArrayList on yksi Listin toteutus
+* ArrayList voidaan toteuttaa Listin kautta:
+List<String> koe = new ArrayList<>();
+* LinkedList<>() on toinen Listin toteutus
+
+
+### Map:
+* HashMap on Mapin toteutus
+* HashMap on siis toteutettavissa Mapin kautta, kuten edella List ja ArrayList
+
+### Set:
+* Joukkoihin liittyvaa toiminnallisuutta
+* Nayttaa vain uniikit alkiot
+* Esim. HashSet ja KeySet()
+* Set joukon alkioihin voi kayttaa for-each looppia
+
+### Collection:
+* kuvaa kokoelmiin liittyvaa toiminnallisuutta
+* List ja Set luokat ovat kokoelmia eli molemmat toteuttavat Collectionin
+* Esim. contains() ja size() kuuluvat kokoelmiin
+* for-each toimii kaikilla Collection rajapinnan luokilla
+
+### Comparable:
+* Geneerisyys hyodyntaa ko. rajapintaa
+* Maarittelee kuinka oliot jarjestetaan
+
+### Collections:
+* Comparable ja Comparator ovat toteutuksia
+
 
 
 
