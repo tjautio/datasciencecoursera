@@ -92,6 +92,7 @@ suprising way. Use inequalities instead.
 	- .toLowerCase() makes all the latters lower case
 	- .trim() removes extra spaces from the beginning and the end
 * .getClass() returns the class of the object
+* metodi compareTo: jos this.m - verrattava saadaan nuoseva jarjestys. verrattava - this.m saadaan laskeva
 
 
 ### Conditional statements
@@ -290,6 +291,8 @@ This means that the value of the variable can't be changed after the class has b
 * aksessori (accessor?) is a method that lets you read the value of a variable
 * Geneerisyys. Luokille on mahdollista antaa parametrina vapaavalintaisen tyyppinen olio
 esim. public class Luokka<T>{ private T alkio...}
+* jos luokan metodin edesta jatetaan pois public tai private talloin kaikki pakkauksen luokat
+voivat kayttaa metodia
 
 ### Object oriented programming
 * In prosedural programming where the flow is organised in smaller parts, methods, that do their bit
@@ -393,6 +396,10 @@ toteutusta
 * tyyppimuunnos onnistuu vain jos muuttuja on oikeasti tyyppia
 * Rajapinta voi olla myos paluuarvo ja nain ollen on mahdollista palauttaa rajapinnan toteuttavia luokkai ilman, etta itse luokka on varmuudella tiedossa
 * Javassa on lukuisia valmiita rajapintoja. Esim. List, Map, Set, Collection
+* kun luokka toteuttaa rajapinnan on mahdollista luokan kauttaa rajapintaa muuttujatyyppina, joka helpottaa ja antaa joustoa
+* haettaessa luokkia, jotka on tallennettu rajapintana ne on kuitenkin muutettava haluttuun luokkaan ennen kasittelya
+* luokka voi myos toteuttaa useampia rajapintoja (erotetaan pilkulla)
+* Rajapintoihin voi myos ohjelmoida oletusmetodeja, joiden toteutus on myos annettu. Naiden maarittely aloitetaan avainsanalla default (tyypiltaan ne ovat automaattisesti public)
 
 ### List:
 * ArrayList on yksi Listin toteutus
@@ -424,7 +431,33 @@ List<String> koe = new ArrayList<>();
 ### Collections:
 * Comparable ja Comparator ovat toteutuksia
 
+### Single Responsibility Principle
+* oliosuunnittelun periaate
+* luokalla tulee olla VAIN yksi vastuu ja selkea tehtava
+* usein on vaikea nahda suoralta kadelta, mika on hyva muoto ohjelmalle
+mutta on ok muokata ohjelmaa jalkeenpain selkeampaan suuntaan
 
+### Luokkien pakkaaminen kirjastoihin
+* NetBeans: New -> Java Package..., johon voi luoda uusia paketteja
+* koodin alkuun tulee: package kirjasto;
+* pakkaukset voivat sisaltaa itsessaan pakkauksia
+* talloin niita kutustan package kirjasto.toinen;
+* pakkauksia voidaan ladata luokkien kayttoon import komennolla
+* import kirjasto.toinen.Luokka;
+
+### Poikkeustilanteet:
+* Jos tulee poikkeus, niin ne voidaan yrittaa kasitella
+try{} catch (Exception e) {} rakenteella
+* try sisaltaa kutsun joka heittaa poikkeuksen ja catch maarittaa mita tehdaan sen jalkeen
+* eli catch suoritetaan vain, jos try lohkon sisall oleva koodi ei toimi normaalisti
+* metodit ja konstruktorit voivat heittaa poikkeuksia. Niita on kahdenlaisia: sellaisia joita on pakko kasitella ja sellaisia joita ei ole
+* throws Exception metodin perassa heittaa poikkeuksen eteenpain metodin kutsujalle
+* throws Excpetion on geneerinen muoto, joka ei maarittele virheen muotoa
+
+### Tiedostojen lukeminen
+* luokka File(String pathname)
+* jos filet on projectin juuressa, niin ne voidaan lukea vain tiedostonimella. Muuten tarvitaan koko polku
+* Scanner voi lukea myos tiedostoja
 
 
 
