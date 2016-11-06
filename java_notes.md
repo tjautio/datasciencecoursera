@@ -218,6 +218,8 @@ lisaamalla muuttujan eteen static
 * Collections.sort(lista); jarjestaa
 * Collections.reverse(lista); kaantaa
 * Collections.shuffle(lista); sekoittaa
+* ArrayListin viite voidaan antaa esimerkiksi useaan HashMapiin. Kirjasto esimerkki, kirjat kirjan nimen tai ISBN mukaan
+* Tallaisessa tapauksessa on kiinnitettava erityista huomiota, etta kokoelmien rakenne sailyy konsistenttian lisaysten ja poisojen yhteydessa.
 
 
 ### Hashmap - tietoparien tallentaminen, hajautustaulu
@@ -235,6 +237,7 @@ It is more efficient information structure when the searching the information th
 for (String avain : sanaparit.keySet()) {
     System.out.print( avain + " " );
 }
+* arvoksi voidaan tallentaa myos ArrayList
 
 
 ### Classes
@@ -386,6 +389,10 @@ return "blaah, blaah"
 tama on siis tarkeaa, jos haluataan kayttaa hakua ArrayListeilla
 * hashCode() on sama jos halutaan kayttaa hashMapia, en ihan viela ymmartanyt tata, mutta se tuintui toimivan parhaiten kaytettyna String-muuttujille
 * jos luokkaa halutaan kayttaa HashMap-avaimena, niin silloin equals() taytyy maaritella uudestaan siten, etta sisallollisesti samat oliot tuottavat true tuloksen ja hashCode() siten, etta saman sisaltoinen olio tuottaa saman arvon
+* alaluokka subclass ja yliluokka superclass
+* luokan ominaisuudet peritaan sanalla extends
+* protected maare muuttujalle voidaan kaytta, kun halutaan alaluokkien nakevan muuttujan tai metodin
+* super() kutsulla kutsutaan yliluokan konstruktoria ja muuttujat alustetaan. Toimii kuin this.
 
 ### Rajapinta - Interface
 * public interface Nimi(), ovat kuin luokkia, mutta eivat aina sisalla metodien
@@ -415,7 +422,7 @@ List<String> koe = new ArrayList<>();
 ### Set:
 * Joukkoihin liittyvaa toiminnallisuutta
 * Nayttaa vain uniikit alkiot
-* Esim. HashSet ja KeySet()
+* Esim. HashSet() ja KeySet()
 * Set joukon alkioihin voi kayttaa for-each looppia
 
 ### Collection:
@@ -456,8 +463,25 @@ try{} catch (Exception e) {} rakenteella
 
 ### Tiedostojen lukeminen
 * luokka File(String pathname)
-* jos filet on projectin juuressa, niin ne voidaan lukea vain tiedostonimella. Muuten tarvitaan koko polku
 * Scanner voi lukea myos tiedostoja
+* jos filet on projectin juuressa, niin ne voidaan lukea vain tiedostonimella. Muuten tarvitaan koko polku
+* Merkiston voi valita: new Scanner(file, "UTF-8");
+* Scanner-luokan metodi .hasNext() kertoo onko tiedostossa viela seuraava rivi
+* .next() palauttaa seuraavan sanan
+* .nextLine() seuraavan rivin
+
+### Olioiden tyypeista ja periytymisesta
+* kaikki oliot ovat tyyppia Object ja ne voidaan esitella aina silla maaritteella
+* tassa on siis kysymys periytymisesta. Esim. string perii Object luokan ominaisuudet, mutta ei toisinpain
+* Aliluokat voivat kayttaa omia ylikirjoiettuja metodeja vaikka luokka olisi maaritelty superluokaksi, mutta aliluokkien omat metodit eivat ole talloin kaytossa
+* perimisen kanssa on syyta olla tarkkana, ettei sita ylirakenna. Aliluokan on tarkoitus olla yliluokan erikoistapaus. Muista Single Responsibility Principle - SRP
+
+### Abstraktit luokat:
+* Niista ei itsessaan voi tehda ilmentymia
+* sen aliluokista tehdaan ilmentymia
+* avainsana: public abstract class Nimi
+* verrattuna rajapintoihin erona on se, etta abstrakteihin luokkiin voidaan maaritella toiminnallisuutta
+
 
 
 
