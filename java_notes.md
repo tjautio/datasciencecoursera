@@ -93,6 +93,7 @@ suprising way. Use inequalities instead.
 	- .trim() removes extra spaces from the beginning and the end
 * .getClass() returns the class of the object
 * metodi compareTo: jos this.m - verrattava saadaan nuoseva jarjestys. verrattava - this.m saadaan laskeva
+* String [] = rivi.split(":"); voidaan jakaa teksti osiin : merkin kohdalta
 
 
 ### Conditional statements
@@ -481,6 +482,34 @@ try{} catch (Exception e) {} rakenteella
 * sen aliluokista tehdaan ilmentymia
 * avainsana: public abstract class Nimi
 * verrattuna rajapintoihin erona on se, etta abstrakteihin luokkiin voidaan maaritella toiminnallisuutta
+
+### FileWriter luokka:
+* kirjoitetaan tiedostoon
+* FileWriter k = new FileWriter("file.txt");
+* k.write("kirjoita tama");
+* k.close();
+* on olemassa append, jolla lisataan tiedostoon, mutta usein on helpompaa vain luoda uusi tiedosto, johpon siirretaan tekstin sisalto
+
+### Swing-kirjasto ja kayttoliittymakomponentit
+* tarjoaa luokkia kayttoliittymakomponenttien luomiseen
+* olio-muuttujia ei saa alustaa luokkamaarittelyssa. Vain metodien sisalla
+* http://docs.oracle.com/javase/tutorial/uiswing/components/index.html
+* JFrame() luo ikkunan
+* JButton() luo painittkeita
+* perusikkunan luomiseen tarvittava run() metodi
+@Override
+    public void run() {
+        frame = new JFrame("Frame");
+        frame.setPreferredSize(new Dimension(200, 100));
+
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        luoKomponentit(frame.getContentPane());
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+* seuraavaksi pitaa luoda luoKomponentit metodi
 
 
 
